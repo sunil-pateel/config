@@ -1,7 +1,5 @@
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", ":NvimTreeOpen<CR>")
-vim.keymap.set("n", "<leader>pc", ":NvimTreeClose<CR>")
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("i", "{<CR>", "{<CR>}<Esc>ko")
 vim.keymap.set("i", "(<CR>", "(<CR>)<Esc>ko")
