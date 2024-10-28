@@ -2,6 +2,8 @@
 
 vim.opt.nu = true
 
+vim.opt.cursorline = true
+
 --Tab Config
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -36,5 +38,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 --vim.opt.colorcolumn = "80"
-
+-- vim.api.nvim_set_hl(0, "LineNr", { bg = "#252629" })
 vim.api.nvim_set_option("clipboard","unnamed")
