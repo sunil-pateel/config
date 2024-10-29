@@ -20,7 +20,7 @@ vim.keymap.set("v", "<leader>P",  "\"+P")
 
 
 --for live-server plugin
-vim.keymap.set('n', '<leader>ls',':LiveServerStart<CR>')
-vim.keymap.set('n', '<leader>lc', ':LiveServerStop<CR>')
+vim.keymap.set('n', '<leader>ss',':LiveServerStart<CR>')
+vim.keymap.set('n', '<leader>sc', ':LiveServerStop<CR>')
 
 
