@@ -18,9 +18,3 @@ vim.keymap.set("n", "<leader>P",  "\"+P")
 vim.keymap.set("v", "<leader>p",  "\"+p")
 vim.keymap.set("v", "<leader>P",  "\"+P")
 
-
---for live-server plugin
-vim.keymap.set('n', '<leader>ss',':LiveServerStart<CR>')
-vim.keymap.set('n', '<leader>sc', ':LiveServerStop<CR>')
-
-
