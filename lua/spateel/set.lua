@@ -1,6 +1,8 @@
-
+--
 
 vim.opt.nu = true
+
+vim.wo.relativenumber = true
 
 vim.opt.cursorline = true
 
@@ -36,6 +38,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+
 
 --vim.opt.colorcolumn = "80"
 -- vim.api.nvim_set_hl(0, "LineNr", { bg = "#252629" })
