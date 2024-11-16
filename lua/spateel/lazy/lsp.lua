@@ -89,8 +89,7 @@ return {
                     local luasnip = require('luasnip')
                     local col = vim.fn.col('.') - 1
 
-                    if cmp.visible() then
-                    elseif luasnip.expand_or_locally_jumpable() then
+                    if luasnip.expand_or_locally_jumpable() then
                         luasnip.expand_or_jump()
                     elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
                         fallback()
@@ -102,8 +101,7 @@ return {
                 ['<S-Tab>'] = cmp.mapping(function(fallback)
                     local luasnip = require('luasnip')
 
-                    if cmp.visible() then
-                    elseif luasnip.locally_jumpable(-1) then
+                    if luasnip.locally_jumpable(-1) then
                         luasnip.jump(-1)
                     else
                         fallback()
@@ -111,8 +109,7 @@ return {
                 end, {'i', 's'}),
 
                 ['<CR>'] = cmp.mapping.confirm({select = true}),
-                ["<C-Space>"] = cmp.mapping.complete(),
-
+                ['<C-Space>'] = cmp.mapping.abort(),
                 }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
@@ -130,10 +127,8 @@ return {
                 source = "always",
                 header = "",
                 prefix = "",
-                
             },
         })
-
         vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
         vim.lsp.handlers.hover,
         {border = 'rounded'}
@@ -144,7 +139,6 @@ return {
         {border = 'rounded'}
         )
     end
-
 
 }
 
