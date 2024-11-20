@@ -1,7 +1,13 @@
 vim.g.mapleader = " "
+
+--Classic
 vim.keymap.set("i", "jj", "<Esc>")
+
+--Automatic Closing Paren and Curly
 vim.keymap.set("i", "{<CR>", "{<CR>}<Esc>ko")
 vim.keymap.set("i", "(<CR>", "(<CR>)<Esc>ko")
+
+--Adding Empty Lines
 vim.keymap.set("n", "<Enter>", "o<Esc>")
 vim.keymap.set("n", "<S-Enter>", "O<Esc>")
 
@@ -17,13 +23,16 @@ vim.keymap.set("n", "<leader>P", "\"+P")
 vim.keymap.set("v", "<leader>p", "\"+p")
 vim.keymap.set("v", "<leader>P", "\"+P")
 
+--Format Text file
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
+--Moving selected text around
 vim.keymap.set("v", "K", ":m '<-2<CR>gv", { silent = true })
 vim.keymap.set("v", "J", ":m '>+1<cr>gv", { silent = true })
 
 vim.keymap.set("v", "L", ":m '<CR>gv>gv", { silent = true })
 vim.keymap.set("v", "H", ":m '<CR>gv<gv", { silent = true })
 
+--Searching and Replacing current word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>/", [[/<C-r><C-w>]])
