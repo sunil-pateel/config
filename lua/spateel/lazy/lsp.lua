@@ -23,22 +23,22 @@ return {
             cmp_lsp.default_capabilities())
 
         vim.api.nvim_create_autocmd('LspAttach', {
-  desc = 'LSP actions',
-  callback = function(event)
-    local opts = {buffer = event.buf}
+            desc = 'LSP actions',
+            callback = function(event)
+                local opts = { buffer = event.buf }
 
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-    vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-  end,
-})
+                vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+                vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+                vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+                vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+                vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+                vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+                vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+                vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+                vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+                vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+            end,
+        })
 
         require("fidget").setup({})
         require("mason").setup()
@@ -96,7 +96,7 @@ return {
                     else
                         cmp.complete()
                     end
-                end, {'i', 's'}),
+                end, { 'i', 's' }),
                 -- Super shift tab
                 ['<S-Tab>'] = cmp.mapping(function(fallback)
                     local luasnip = require('luasnip')
@@ -106,11 +106,11 @@ return {
                     else
                         fallback()
                     end
-                end, {'i', 's'}),
+                end, { 'i', 's' }),
 
-                ['<CR>'] = cmp.mapping.confirm({select = true}),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
                 ['<C-Space>'] = cmp.mapping.abort(),
-                }),
+            }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
@@ -129,16 +129,24 @@ return {
                 prefix = "",
             },
         })
-        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-        vim.lsp.handlers.hover,
-        {border = 'rounded'}
-        )
+        vim.lsp.handlers['textDocument/hover'] = function(err, res, ctx, _)
+            local _, winid = vim.lsp.handlers.hover(err, res, ctx, {
+                border = "rounded",
+                silent = true, -- Disable `No information available` notification
+            })
+
+            -- Avoid concealed URL, SEE: https://github.com/neovim/neovim/pull/25073
+            vim.api.nvim_set_option_value("conceallevel", 1, {
+                scope = "local",
+                win = winid,
+            })
+        end
+
 
         vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-        vim.lsp.handlers.signature_help,
-        {border = 'rounded'}
+            vim.lsp.handlers.signature_help,
+            { border = 'rounded' }
         )
     end
 
 }
-

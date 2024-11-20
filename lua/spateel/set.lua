@@ -1,5 +1,7 @@
 vim.opt.nu = true
 
+vim.opt.conceallevel = 3
+
 vim.opt.relativenumber = true
 
 vim.opt.cursorline = true
