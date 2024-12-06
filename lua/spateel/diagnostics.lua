@@ -3,7 +3,7 @@ vim.diagnostic.config({
 })
 
 vim.api.nvim_set_keymap(
-  'n', '<Leader>d', ':lua vim.diagnostic.open_float()<CR>', 
+  'n', '<Leader>d', ':lua vim.diagnostic.open_float()<CR>',
   { noremap = true, silent = true }
 )
 -- Go to next diagnostic (if there are multiple on the same line, only shows

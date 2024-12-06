@@ -48,6 +48,8 @@ return {
                 "rust_analyzer",
                 "gopls",
                 "pyright",
+                "eslint",
+                "ts_ls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -129,6 +131,7 @@ return {
                 prefix = "",
             },
         })
+
         vim.lsp.handlers['textDocument/hover'] = function(err, res, ctx, _)
             local _, winid = vim.lsp.handlers.hover(err, res, ctx, {
                 border = "rounded",
@@ -141,7 +144,6 @@ return {
                 win = winid,
             })
         end
-
 
         vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
             vim.lsp.handlers.signature_help,
