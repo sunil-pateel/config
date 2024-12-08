@@ -5,6 +5,6 @@
 3. Create a directory in your home called ~/.config/
 4. Clone this repo into ~/.config/ and rename the folder to nvim. Now the path should look like ~/.config/nvim/
 5. Now just launch NeoVim and Lazy should install everything
-
+6. (OPTIONAL) Install a Nerd font so that you can get the fancy icons in your editor
 Enjoy!
 
