@@ -9,7 +9,7 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
     vim.keymap.set("n", "<leader>pv", "<cmd> NvimTreeOpen<CR>", {silent = true})
-    vim.keymap.set("n", "<leader>pc", "<cmd> NvimTreeClose<CR>", {silent = true}) 
+    vim.keymap.set("n", "<leader>pc", "<cmd> NvimTreeClose<CR>", {silent = true})
     require("nvim-tree").setup {}
   end,
 }
