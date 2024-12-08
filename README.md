@@ -6,9 +6,13 @@
 export PATH="$PATH:/opt/nvim/"
 export EDITOR='/opt/nvim/nvim'
 ```
-3. Create a directory in your home called ~/.config/
-4. Clone this repo into ~/.config/ and rename the folder to nvim. Now the path should look like ~/.config/nvim/
-5. Now just launch NeoVim and Lazy should install everything
-6. (OPTIONAL) Install a Nerd font so that you can get the fancy icons in your editor
+4. Source your ~/.bashrc file using
+```bash
+source ~/.bashrc
+```
+5. Create a directory in your home called ~/.config/
+6. Clone this repo into ~/.config/ and rename the folder to nvim. Now the path should look like ~/.config/nvim/
+7. Now just launch NeoVim and Lazy should install everything
+8. (OPTIONAL) Install a Nerd font so that you can get the fancy icons in your editor
 Enjoy!
 
