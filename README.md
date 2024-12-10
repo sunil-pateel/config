@@ -28,15 +28,19 @@ bind-key -T copy-mode-vi 'C-k' select-pane -U
 bind-key -T copy-mode-vi 'C-l' select-pane -R
 bind-key -T copy-mode-vi 'C-\' select-pane -l
 ```
-4. Source your ~/.bashrc file using
+4. Then source your ~/.tmux.conf file using
+```bash
+tmux source ~/.tmux.conf
+```
+5. Source your ~/.bashrc file using
 ```bash
 source ~/.bashrc
 ```
-5. Create a directory in your home called ~/.config/
-6. Clone this repo into ~/.config/ and rename the folder to nvim. Now the path should look like ~/.config/nvim/
-7. Now just launch NeoVim and Lazy should install everything
-8. Type ":checkhealth" once NeoVim launches and follow everything that it says to do
-9. (OPTIONAL) Install a Nerd font so that you can get the fancy icons in your editor    
+6. Create a directory in your home called ~/.config/
+7. Clone this repo into ~/.config/ and rename the folder to nvim. Now the path should look like ~/.config/nvim/
+8. Now just launch NeoVim and Lazy should install everything
+9. Type ":checkhealth" once NeoVim launches and follow everything that it says to do
+10. (OPTIONAL) Install a Nerd font so that you can get the fancy icons in your editor    
     
 Enjoy!
 
