@@ -33,8 +33,8 @@ return {
                 vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
                 vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
                 vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-                vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-                vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+                vim.keymap.set('n', '<leader>s', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+                vim.keymap.set({ 'n', 'x' }, '<leader>f', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
                 vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
             end,
         })
@@ -74,6 +74,9 @@ return {
             }
         })
 
+
+
+
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -109,7 +112,7 @@ return {
                     end
                 end, { 'i', 's' }),
 
-                ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                ['<CR>'] = cmp.mapping.confirm({ select = false }),
                 ['<C-Space>'] = cmp.mapping.abort(),
             }),
             sources = cmp.config.sources({
@@ -130,6 +133,9 @@ return {
                 prefix = "",
             },
         })
+
+        require("lspconfig").ocamllsp.setup {}
+
 
         vim.lsp.handlers['textDocument/hover'] = function(err, res, ctx, _)
             local _, winid = vim.lsp.handlers.hover(err, res, ctx, {

@@ -1,14 +1,14 @@
 return {
     "ThePrimeagen/refactoring.nvim",
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
     },
     lazy = false,
     config = function()
-      require("refactoring").setup()
+        require("refactoring").setup()
         vim.keymap.set("x", "<leader>re", function() require('refactoring').refactor('Extract Function') end)
-        vim.keymap.set("x", "<leadee>rf", function() require('refactoring').refactor('Extract Function To File') end)
+        vim.keymap.set("x", "<leader>rf", function() require('refactoring').refactor('Extract Function To File') end)
         -- Extract function supports only visual mode
         vim.keymap.set("x", "<leader>rv", function() require('refactoring').refactor('Extract Variable') end)
         -- Extract variable supports only visual mode
@@ -19,6 +19,6 @@ return {
 
         vim.keymap.set("n", "<leader>rb", function() require('refactoring').refactor('Extract Block') end)
         vim.keymap.set("n", "<leader>rbf", function() require('refactoring').refactor('Extract Block To File') end)
--- Extract block supports only normal mode
+        -- Extract block supports only normal mode
     end,
 }
