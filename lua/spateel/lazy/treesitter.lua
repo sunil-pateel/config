@@ -13,7 +13,6 @@ return {
                 "query",
                 "go",
                 "python",
-                "ocaml",
                 "rust",
                 "markdown",
                 "markdown_inline",
@@ -43,6 +42,7 @@ return {
             },
 
         }
+
         vim.treesitter.language.register("html", "ejs")
     end
 }
