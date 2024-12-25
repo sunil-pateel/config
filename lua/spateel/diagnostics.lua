@@ -1,4 +1,3 @@
-
 vim.diagnostic.config({
   virtual_text = false, -- Turn off inline diagnostics
 })
@@ -19,5 +18,3 @@ vim.api.nvim_set_keymap(
   'n', '<Leader>np', ':lua vim.diagnostic.goto_prev()<CR>',
 	{ noremap = true, silent = true }
 )
-
-

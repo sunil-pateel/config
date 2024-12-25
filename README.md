@@ -7,7 +7,7 @@ export PATH="$PATH:/opt/nvim/"
 export EDITOR='/opt/nvim/nvim'
 ```
 3. If you are going to use the Tmux plugin, add this part to your ~/.tmux.conf file
-```
+```tmux
 # Smart pane switching with awareness of Vim splits.
 # See: https://github.com/christoomey/vim-tmux-navigator
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \

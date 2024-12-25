@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-
 --Classic
 vim.keymap.set("i", "jj", "<Esc>")
 

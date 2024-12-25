@@ -10,7 +10,7 @@ return {
                     set_jumps = true, -- whether to set jumps in the jumplist
                     goto_next_start = {
                         ["<leader>nf"] = "@function.outer",
-                        ["]]"] = { query = "@class.outer", desc = "Next class start" },
+                        ["<leader>nc"] = { query = "@class.outer", desc = "Next class start" },
                         --
                         -- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queries.
                         ["]o"] = "@loop.*",
@@ -18,7 +18,7 @@ return {
                         --
                         -- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
                         -- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
-                        ["]s"] = { query = "@local.scope", query_group = "locals", desc = "Next scope" },
+                        ["<leader>ns"] = { query = "@local.scope", query_group = "locals", desc = "Next scope" },
                         ["<leader>nz"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
                     },
                     goto_next_end = {
@@ -26,8 +26,8 @@ return {
                         ["]["] = "@class.outer",
                     },
                     goto_previous_start = {
-                        ["[m"] = "@function.outer",
-                        ["[["] = "@class.outer",
+                        ["<leader>lf"] = "@function.outer",
+                        ["<leader>lc"] = "@class.outer",
                     },
                     goto_previous_end = {
                         ["[M"] = "@function.outer",
@@ -37,7 +37,7 @@ return {
                     -- Use if you want more granular movements
                     -- Make it even more gradual by adding multiple queries and regex.
                     goto_next = {
-                        ["<leader>nc"] = "@conditional.outer",
+                        ["]d"] = "@conditional.outer",
                     },
                     goto_previous = {
                         ["[d"] = "@conditional.outer",
