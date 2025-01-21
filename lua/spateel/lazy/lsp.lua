@@ -8,8 +8,8 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        "L3MON4D3/LuaSnip",
-        "saadparwaiz1/cmp_luasnip",
+        -- "L3MON4D3/LuaSnip",
+        -- "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
     },
 
@@ -78,46 +78,46 @@ return {
 
 
         cmp.setup({
-            snippet = {
-                expand = function(args)
-                    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-                end,
-            },
+            -- snippet = {
+            --     expand = function(args)
+            --         require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            --     end,
+            -- },
             window = {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
                 -- Super tab
-                ['<Tab>'] = cmp.mapping(function(fallback)
-                    local luasnip = require('luasnip')
-                    local col = vim.fn.col('.') - 1
-
-                    if luasnip.expand_or_locally_jumpable() then
-                        luasnip.expand_or_jump()
-                    elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-                        fallback()
-                    else
-                        cmp.complete()
-                    end
-                end, { 'i', 's' }),
-                -- Super shift tab
-                ['<S-Tab>'] = cmp.mapping(function(fallback)
-                    local luasnip = require('luasnip')
-
-                    if luasnip.locally_jumpable(-1) then
-                        luasnip.jump(-1)
-                    else
-                        fallback()
-                    end
-                end, { 'i', 's' }),
+                -- ['<Tab>'] = cmp.mapping(function(fallback)
+                --     local luasnip = require('luasnip')
+                --     local col = vim.fn.col('.') - 1
+                --
+                --     if luasnip.expand_or_locally_jumpable() then
+                --         luasnip.expand_or_jump()
+                --     elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+                --         fallback()
+                --     else
+                --         cmp.complete()
+                --     end
+                -- end, { 'i', 's' }),
+                -- -- Super shift tab
+                -- ['<S-Tab>'] = cmp.mapping(function(fallback)
+                --     local luasnip = require('luasnip')
+                --
+                --     if luasnip.locally_jumpable(-1) then
+                --         luasnip.jump(-1)
+                --     else
+                --         fallback()
+                --     end
+                -- end, { 'i', 's' }),
 
                 ['<CR>'] = cmp.mapping.confirm({ select = false }),
                 ['<C-Space>'] = cmp.mapping.abort(),
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
-                { name = 'luasnip' }, -- For luasnip users.
+                -- { name = 'luasnip' }, -- For luasnip users.
             }, {
                 { name = 'buffer' },
             }),
