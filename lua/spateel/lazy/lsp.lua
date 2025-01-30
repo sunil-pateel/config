@@ -134,7 +134,7 @@ return {
             },
         })
 
-        require("lspconfig").ocamllsp.setup {}
+        require("lspconfig").ocamllsp.setup{}
 
 
         vim.lsp.handlers['textDocument/hover'] = function(err, res, ctx, _)
