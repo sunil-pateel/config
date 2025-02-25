@@ -1,6 +1,9 @@
 return{
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
+    lazy = true,
+    -- event = "BufReadPost",
+    keys = {{"<leader>a"}, {"<C-e>"}, {"<leader>h"},{"<leader>j"},{"<leader>k"},{"<leader>l"}},
     dependencies = { {"nvim-lua/plenary.nvim"} },
 
     config = function()

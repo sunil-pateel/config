@@ -1,6 +1,7 @@
 return {
     'kevinhwang91/nvim-ufo',
     dependencies = { { 'kevinhwang91/promise-async' } },
+    event = "UIEnter",         -- needed for folds to load in time and comments being closed
     config = function()
         vim.o.foldcolumn = '0' -- '0' is not bad
         vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
@@ -19,7 +20,7 @@ return {
             dynamicRegistration = false,
             lineFoldingOnly = true
         }
-        local language_servers = require("lspconfig").util._available_servers() -- or list servers manually like {'gopls', 'clangd'}
+        local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
         for _, ls in ipairs(language_servers) do
             require('lspconfig')[ls].setup({
                 capabilities = capabilities
@@ -27,7 +28,10 @@ return {
             })
         end
         require('ufo').setup({
+
             open_fold_hl_timeout = 0
         })
-    end
+    end,
+    lazy = true,
+    keys = { { "zR" }, { "zM" }, { "zc" }, { "zo" } },
 }

@@ -1,7 +1,7 @@
 return {
     'navarasu/onedark.nvim',
+    lazy= false,
     config = function()
-
         require('onedark').setup  {
             -- Main options --
             style = 'warm', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
@@ -32,7 +32,9 @@ return {
 
             -- Custom Highlights --
             colors = {}, -- Override default colors
-            highlights = {}, -- Override highlight groups
+            highlights = {
+                -- AlphaShortcut = {fg = c.blue, bg = c.blue}
+            }, -- Override highlight groups
 
             -- Plugins Config --
             diagnostics = {

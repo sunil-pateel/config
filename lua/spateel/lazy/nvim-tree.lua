@@ -1,7 +1,8 @@
 return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    lazy = false,
+    event = "VeryLazy",
+    keys = {{"<leader>pv"}, {"<leader>pc"}},
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
