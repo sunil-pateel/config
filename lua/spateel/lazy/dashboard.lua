@@ -34,7 +34,7 @@ return {
                         icon_hl = 'Title',
                         desc = ' Project Directory                  ',
                         key = 'SPC p v',
-                        key_hl = 'Keyword',
+                        key_hl = 'Title',
                         key_format = ' %s', -- remove default surrounding `[]`
                         action = ':NvimTreeOpen<CR>'
                     },
@@ -43,7 +43,7 @@ return {
                         icon_hl = 'Title',
                         desc = ' Find File                  ',
                         key = 'SPC p f',
-                        key_hl = 'Keyword',
+                        key_hl = 'Title',
                         key_format = ' %s', -- remove default surrounding `[]`
                         action = require('telescope.builtin').find_files
                     },
@@ -52,7 +52,7 @@ return {
                         icon_hl = 'Title',
                         desc = ' Find Text                  ',
                         key = 'SPC p s',
-                        key_hl = 'Keyword',
+                        key_hl = 'Title',
                         key_format = ' %s', -- remove default surrounding `[]`
                         action = function()
                             require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") });
@@ -63,7 +63,7 @@ return {
                         icon_hl = 'Title',
                         desc = ' New File                  ',
                         key = 'a',
-                        key_hl = 'Keyword',
+                        key_hl = 'Title',
                         key_format = ' %s', -- remove default surrounding `[]`
                         action = ":ene <BAR> startinsert"
                     },
@@ -72,7 +72,7 @@ return {
                         icon_hl = 'Title',
                         desc = ' Configuration                  ',
                         key = 'c',
-                        key_hl = 'Keyword',
+                        key_hl = 'Title',
                         key_format = ' %s', -- remove default surrounding `[]`
                         action = ":e ~/.config/nvim"
                     },
@@ -81,7 +81,7 @@ return {
                         icon_hl = 'Title',
                         desc = ' Update Plugins                  ',
                         key = 'u',
-                        key_hl = 'Keyword',
+                        key_hl = 'Title',
                         key_format = ' %s', -- remove default surrounding `[]`
                         action = ":Lazy update"
                     },
@@ -90,7 +90,7 @@ return {
                         icon_hl = 'Title',
                         desc = ' Quit Neovim                  ',
                         key = 'q',
-                        key_hl = 'Keyword',
+                        key_hl = 'Title',
                         key_format = ' %s', -- remove default surrounding `[]`
                         action = ":q"
                     },
@@ -99,6 +99,9 @@ return {
                 footer = {},
             }
         }
+
+        local c = require("onedark.colors")
+        vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = c.purple})
     end,
     dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 }
