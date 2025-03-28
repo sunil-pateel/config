@@ -15,9 +15,8 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 --Fold Config
--- vim.opt.foldmethod='indent'
--- vim.opt.foldlevel = 0
--- vim.opt.foldnestmax = 1
+vim.opt.foldlevel = 0
+vim.opt.foldnestmax = 1
 vim.opt.scrolloff = 10
 
 --Backup Config
@@ -39,4 +38,4 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.api.nvim_set_option("clipboard","unnamed")
+vim.api.nvim_set_option("clipboard", "unnamed")

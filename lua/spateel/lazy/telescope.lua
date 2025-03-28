@@ -11,7 +11,5 @@ return {
         end)
         vim.keymap.set('n', '<leader>pds', builtin.lsp_document_symbols, {})
         vim.keymap.set('n', '<leader>pr', builtin.lsp_references, {})
-        
-        
     end
 }
