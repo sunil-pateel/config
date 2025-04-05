@@ -15,9 +15,13 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 --Fold Config
-vim.opt.foldlevel = 0
-vim.opt.foldnestmax = 1
-vim.opt.scrolloff = 10
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldtext = ""
+vim.opt.foldcolumn = "0"
+vim.opt.fillchars:append({fold = " "})
 
 --Backup Config
 vim.opt.swapfile = false
