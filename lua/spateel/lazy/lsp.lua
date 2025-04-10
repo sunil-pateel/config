@@ -55,7 +55,7 @@ return {
             handlers = {
                 function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
+                        capabilities = capabilities,
                     }
                 end,
 
@@ -80,11 +80,6 @@ return {
 
 
         cmp.setup({
-            -- snippet = {
-            --     expand = function(args)
-            --         require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            --     end,
-            -- },
             window = {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
@@ -137,25 +132,6 @@ return {
         })
 
         require("lspconfig").ocamllsp.setup {}
-
-
-        vim.lsp.handlers['textDocument/hover'] = function(err, res, ctx, _)
-            local _, winid = vim.lsp.handlers.hover(err, res, ctx, {
-                border = "rounded",
-                silent = true, -- Disable `No information available` notification
-            })
-
-            -- Avoid concealed URL, SEE: https://github.com/neovim/neovim/pull/25073
-            vim.api.nvim_set_option_value("conceallevel", 1, {
-                scope = "local",
-                win = winid,
-            })
-        end
-
-        vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-            vim.lsp.handlers.signature_help,
-            { border = 'rounded' }
-        )
     end
 
 }

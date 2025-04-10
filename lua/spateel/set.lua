@@ -14,6 +14,9 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
+--Scroll off
+vim.opt.scrolloff = 15
+
 --Fold Config
 vim.o.foldenable = true
 vim.o.foldlevel = 99
