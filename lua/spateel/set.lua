@@ -37,7 +37,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 
-
+-- Correct colors
 vim.opt.termguicolors = true
 
 vim.opt.signcolumn = "yes"
