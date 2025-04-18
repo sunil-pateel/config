@@ -31,3 +31,7 @@ vim.keymap.set("v", "H", ":m '<CR>gv<gv", { silent = true })
 
 --Searching and Replacing current word
 vim.keymap.set("n", "<leader>/", [[/<C-r><C-w>]])
+
+-- Neogen
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", "<Leader>fc", ":lua require('neogen').generate({ type = 'func' })<CR>", opts)

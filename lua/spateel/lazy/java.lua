@@ -1,54 +1,6 @@
--- return {
---     "nvim-java/nvim-java",
---     -- enabled = false,
---     dependencies = {
---         {
---             "neovim/nvim-lspconfig",
---             opts = {
---                 servers = {
---                     -- Your JDTLS configuration goes here
---                     jdtls = {
---                         settings = {
---                             java = {
---                                 configuration = {
---                                     runtimes = {
---                                         {
---                                             name = "JavaSE-11.0.22",
---                                             path = "/usr/local/java-sdks/jdk-11.0.22",
---                                         },
---                                     },
---                                 },
---                             },
---                         },
---                     },
---                 },
---                 setup = {
---                     jdtls = function()
---                         -- Your nvim-java configuration goes here
---                         require("java").setup({
---                             root_markers = {
---                                 "settings.gradle",
---                                 "settings.gradle.kts",
---                                 "pom.xml",
---                                 "build.gradle",
---                                 "mvnw",
---                                 "gradlew",
---                                 "build.gradle",
---                                 "build.gradle.kts",
---                             },
---                             jdk = {
---                                 auto_install = false,
---                             }
---                         })
---                     end,
---                 },
---             },
---         },
---     },
--- }
 return {
     "nvim-java/nvim-java",
-    lazy = false,
+    event = "BufReadPost",
     dependencies = {
         "nvim-java/lua-async-await",
         "nvim-java/nvim-java-core",
