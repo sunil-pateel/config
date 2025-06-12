@@ -18,7 +18,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-    spec = "spateel.lazy",
+    spec = "plugins",
     change_detection = { notify = false },
     checker = { enabled = true },
     performance = {

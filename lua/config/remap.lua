@@ -35,3 +35,19 @@ vim.keymap.set("n", "<leader>/", [[/<C-r><C-w>]])
 -- Neogen
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<leader>wc", ":lua require('neogen').generate({})<CR>", opts)
+
+-- Diagnostics
+vim.keymap.set(
+    'n', '<leader>nd', ':lua vim.diagnostic.goto_next()<CR>',
+    { silent = true }
+)
+
+vim.keymap.set(
+    'n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>',
+    { silent = true }
+)
+
+vim.keymap.set(
+    'n', '<Leader>np', ':lua vim.diagnostic.goto_prev()<CR>',
+    { silent = true }
+)
