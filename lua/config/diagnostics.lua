@@ -1,5 +1,5 @@
 vim.diagnostic.config({
-    virtual_text = false, -- Turn off inline diagnostics
+    virtual_text = {current_line = true}, -- Turn off inline diagnostics
 })
 
 

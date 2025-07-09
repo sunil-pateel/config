@@ -19,15 +19,6 @@ return {
                     "                                                     ",
                     "                                                     ",
                 }, --your header
-                -- dashboard.button("SPC p v", "  Project Directory", "<cmd> NvimTreeOpen<CR>"),
-                -- dashboard.button("SPC p f", "  Find File", require('telescope.builtin').find_files),
-                -- dashboard.button("SPC p s", "T  Find Text", function()
-                --     require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") });
-                -- end),
-                -- dashboard.button("a", "  New file", ":ene <BAR> startinsert <CR>"),
-                -- dashboard.button("c", "  Configuration", ":e ~/.config/nvim<CR>"),
-                -- dashboard.button("u", "  Update Plugins", ":Lazy update<CR>"),
-                -- dashboard.button("q", "✕  Quit Neovim", ":qa!<CR>"),
                 center = {
                     {
                         icon = ' ',
