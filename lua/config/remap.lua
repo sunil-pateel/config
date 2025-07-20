@@ -37,17 +37,8 @@ local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<leader>wc", ":lua require('neogen').generate({})<CR>", opts)
 
 -- Diagnostics
-vim.keymap.set(
-    'n', '<leader>nd', ':lua vim.diagnostic.goto_next()<CR>',
-    { silent = true }
-)
+vim.keymap.set('n', '<leader>nd', vim.diagnostic.goto_next, { silent = true })
 
-vim.keymap.set(
-    'n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>',
-    { silent = true }
-)
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { silent = true })
 
-vim.keymap.set(
-    'n', '<Leader>np', ':lua vim.diagnostic.goto_prev()<CR>',
-    { silent = true }
-)
+vim.keymap.set('n', '<Leader>np', vim.diagnostic.goto_prev, { silent = true })
