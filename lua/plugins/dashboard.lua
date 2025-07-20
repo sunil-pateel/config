@@ -75,6 +75,15 @@ return {
                         action = ":Lazy update"
                     },
                     {
+                        icon = '☻ ',
+                        icon_hl = 'Title',
+                        desc = ' Lazy Profile                  ',
+                        key = 'p',
+                        key_hl = 'Title',
+                        key_format = ' %s', -- remove default surrounding `[]`
+                        action = ":Lazy profile"
+                    },
+                    {
                         icon = '✕ ',
                         icon_hl = 'Title',
                         desc = ' Quit Neovim                  ',

@@ -27,9 +27,9 @@ require('lazy').setup({
 		},
 		rtp = {
 			disabled_plugins = {
-                "man", -- I don't know if these 3 plugins are fine to disable, but nothing seems to be going wrong
-                "osc52",
-				"matchit",
+    --             "man", -- I don't know if these 3 plugins are fine to disable, but nothing seems to be going wrong
+    --             "osc52",
+				-- "matchit",
 				-- "matchparen",
 				"netrwPlugin",
 				"gzip",

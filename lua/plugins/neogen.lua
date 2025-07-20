@@ -1,4 +1,5 @@
 return {
     "danymat/neogen",
-    config = true
+    config = true,
+    lazy = true
 }

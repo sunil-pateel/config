@@ -9,6 +9,8 @@ return {
         "hrsh7th/nvim-cmp",
         "j-hui/fidget.nvim",
     },
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 
     config = function()
         vim.api.nvim_create_autocmd('LspAttach', {
