@@ -13,6 +13,7 @@ return {
         vim.keymap.set('n', '<leader>ps', fzf.live_grep, {})
         vim.keymap.set('n', '<leader>pr', fzf.lsp_references, {})
         vim.keymap.set('n', '<leader>pds', fzf.lsp_document_symbols, {})
+        vim.keymap.set('n', '<leader>pt', fzf.tmux_buffers, {})
     end
 }
 
