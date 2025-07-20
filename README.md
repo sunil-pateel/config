@@ -98,6 +98,7 @@ tmux source ~/.tmux.conf
 ```bash
 source ~/.bashrc
 ```
+5. You also need to install fzf, fdfind, and rg using whatever os package manager you are using, since this config uses fzf-lua
 6. Create a directory in your home called ~/.config/
 7. Clone this repo into ~/.config/ and rename the folder to nvim. Now the path should look like ~/.config/nvim/
 8. Now just launch NeoVim and Lazy should install everything
