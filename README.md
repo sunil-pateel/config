@@ -98,12 +98,12 @@ tmux source ~/.tmux.conf
 ```bash
 source ~/.bashrc
 ```
-5. You also need to install fzf, fdfind, and rg using whatever os package manager you are using, since this config uses fzf-lua
-6. Create a directory in your home called ~/.config/
-7. Clone this repo into ~/.config/ and rename the folder to nvim. Now the path should look like ~/.config/nvim/
-8. Now just launch NeoVim and Lazy should install everything
-9. Type ":checkhealth" once NeoVim launches and follow everything that it says to do
-10. (OPTIONAL) Install a Nerd font so that you can get the fancy icons in your editor    
+6. You also need to install fzf, fdfind, and rg using whatever os package manager you are using, since this config uses fzf-lua
+7. Create a directory in your home called ~/.config/
+8. Clone this repo into ~/.config/ and rename the folder to nvim. Now the path should look like ~/.config/nvim/
+9. Now just launch NeoVim and Lazy should install everything
+10. Type ":checkhealth" once NeoVim launches and follow everything that it says to do
+11. (OPTIONAL) Install a Nerd font so that you can get the fancy icons in your editor    
     
 Enjoy!
 
