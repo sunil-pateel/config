@@ -5,6 +5,7 @@ return {
     opts = {
         exclude =  {
             filetypes = {"dashboard"}
-        }
+        },
+        scope = { enabled = false },
     }
 }
