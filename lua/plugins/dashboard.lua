@@ -36,7 +36,7 @@ return {
                         key = 'SPC p f',
                         key_hl = 'Title',
                         key_format = ' %s', -- remove default surrounding `[]`
-                        action = require('telescope.builtin').find_files
+                        action = require('fzf-lua').files
                     },
                     {
                         icon = 'T ',
@@ -45,9 +45,7 @@ return {
                         key = 'SPC p s',
                         key_hl = 'Title',
                         key_format = ' %s', -- remove default surrounding `[]`
-                        action = function()
-                            require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") });
-                        end
+                        action = require("fzf-lua").live_grep;
                     },
                     {
                         icon = ' ',
