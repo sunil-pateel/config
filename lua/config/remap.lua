@@ -1,10 +1,8 @@
+--Leader
 vim.g.mapleader = " "
+
 --Classic
 vim.keymap.set("i", "jj", "<Esc>")
-
---Automatic Closing Paren and Curly
-vim.keymap.set("i", "{<CR>", "{<CR>}<Esc>ko")
-vim.keymap.set("i", "(<CR>", "(<CR>)<Esc>ko")
 
 --Adding Empty Lines
 vim.keymap.set("n", "<Enter>", "o<Esc>")
@@ -34,11 +32,9 @@ vim.keymap.set("n", "<leader>/", [[/<C-r><C-w>]])
 
 -- Neogen
 local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("n", "<leader>wc", ":lua require('neogen').generate({})<CR>", opts)
+vim.keymap.set("n", "<leader>wc", ":lua require('neogen').generate({})<CR>", opts)
 
 -- Diagnostics
 vim.keymap.set('n', '<leader>nd', vim.diagnostic.goto_next, { silent = true })
-
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { silent = true })
-
 vim.keymap.set('n', '<Leader>np', vim.diagnostic.goto_prev, { silent = true })
