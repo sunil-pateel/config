@@ -1,10 +1,9 @@
 vim.opt.nu = true
-
-vim.opt.conceallevel = 3
-
 vim.opt.relativenumber = true
 
 vim.opt.cursorline = true
+
+vim.opt.conceallevel = 3
 
 --Tab Config
 vim.opt.tabstop = 4
@@ -48,3 +47,5 @@ vim.opt.updatetime = 50
 vim.api.nvim_set_option("clipboard", "unnamed")
 
 vim.lsp.set_log_level("debug")
+
+vim.o.winborder = "rounded"
