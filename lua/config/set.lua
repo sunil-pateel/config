@@ -47,5 +47,3 @@ vim.opt.updatetime = 50
 vim.api.nvim_set_option("clipboard", "unnamed")
 
 vim.lsp.set_log_level("debug")
-
-vim.o.winborder = "rounded"
