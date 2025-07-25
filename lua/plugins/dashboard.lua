@@ -48,15 +48,6 @@ return {
                         action = require("fzf-lua").live_grep;
                     },
                     {
-                        icon = ' ',
-                        icon_hl = 'Title',
-                        desc = ' New File                  ',
-                        key = 'a',
-                        key_hl = 'Title',
-                        key_format = ' %s', -- remove default surrounding `[]`
-                        action = ":ene <BAR> startinsert"
-                    },
-                    {
                         icon = ' ',
                         icon_hl = 'Title',
                         desc = ' Configuration                  ',
