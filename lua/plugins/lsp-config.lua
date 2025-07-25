@@ -2,11 +2,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         "mason-org/mason.nvim",
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
-        "hrsh7th/cmp-cmdline",
-        "hrsh7th/nvim-cmp",
         "j-hui/fidget.nvim",
     },
     event = { "BufReadPost", "BufNewFile" },
@@ -30,23 +25,23 @@ return {
         })
         require("fidget").setup({})
         require("mason").setup()
-        local cmp = require('cmp')
-
-        cmp.setup({
-            window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
-            },
-            mapping = cmp.mapping.preset.insert({
-                ['<CR>'] = cmp.mapping.confirm({ select = false }),
-                ['<C-Space>'] = cmp.mapping.abort(),
-            }),
-            sources = cmp.config.sources({
-                { name = 'nvim_lsp' },
-            }, {
-                { name = 'buffer' },
-            }),
-        })
+        -- local cmp = require('cmp')
+        --
+        -- cmp.setup({
+        --     window = {
+        --         completion = cmp.config.window.bordered(),
+        --         documentation = cmp.config.window.bordered(),
+        --     },
+        --     mapping = cmp.mapping.preset.insert({
+        --         ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        --         ['<C-Space>'] = cmp.mapping.abort(),
+        --     }),
+        --     sources = cmp.config.sources({
+        --         { name = 'nvim_lsp' },
+        --     }, {
+        --         { name = 'buffer' },
+        --     }),
+        -- })
     end
 
 }
