@@ -1,7 +1,9 @@
 return {
     'saghen/blink.cmp',
+    event = { "BufReadPost", "BufNewFile" },
 
     version = '1.*',
+    build = 'cargo build --release',
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -36,16 +38,13 @@ return {
         --
         -- See the fuzzy documentation for more information
         fuzzy = {
-            implementation = "prefer_rust",
-            prebuilt_binaries = {
-                force_version = "1.6",
-            }
+            implementation = "lua",
         },
         signature = {
             enabled = true,
             window = {
                 border = "rounded"
-            }
+            },
         }
     },
 
