@@ -107,3 +107,81 @@ source ~/.bashrc
     
 Enjoy!
 
+# IdeaVim Config
+```vim
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+
+set clipboard+=unnamed
+
+let mapleader = " "
+
+set number
+set relativenumber
+
+set scrolloff=5
+set visualbell
+
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+inoremap jj <ESC>
+
+nnoremap <CR> o<Esc>
+nnoremap <S-CR> O<Esc>
+
+
+" Using this link for actions https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
+map N <Action>(NextTab)
+vmap K <Action>(MoveLineUp)
+vmap J <Action>(MoveLineDown)
+map H <Action>(EditorUnindentSelection)
+map L <Action>(EditorIndentSelection)
+map <leader>pf <Action>(GotoFile)
+map <leader>pr <Action>(FindUsages)
+map <leader>ps <Action>(GotoText)
+map <leader>c <Action>(CommentByLineComment)
+map <leader>gs <Action>(VcsGroup)
+map <c-h> <Action>(GoToTab1)
+map <c-j> <Action>(GoToTab2)
+map <c-k> <Action>(GoToTab3)
+map <c-l> <Action>(GoToTab4)
+map <c-t> <Action>(CloseContent)
+map <c-;> <Action>(NextTab)
+map <c-g> <Action>(PreviousTab)
+" TODO: Add a command to close terminal
+map <leader>s <Action>(RefactoringMenu)
+map <leader>f <Action>(ReformatCode)
+map <leader>r <Action>(Run)
+map zc <Action>(CollapseRegion)
+map zo <Action>(ExpandRegion)
+map zR <Action>(ExpandAllRegions)
+map zM <Action>(CollapseAllRegions)
+map <leader>d <Action>(ShowErrorDescription)
+map <leader>gs <Action>(ActivateCommitToolWindow)
+imap <c-m> <Action>(CodeCompletion)
+
+nnoremap <leader>h :noh<CR>
+
+Plug 'preservim/nerdtree'
+nnoremap <leader>pv :NERDTree<CR>
+nnoremap <leader>pc :NERDTreeClose<CR>
+
+```
+
+
