@@ -1,11 +1,13 @@
 return {
     'mfussenegger/nvim-dap',
     dependencies = {
-        "mfussenegger/nvim-dap-python"
+        "mfussenegger/nvim-dap-python",
+        "theHamsta/nvim-dap-virtual-text"
     },
-    keys = {{"<leader>tb", mode = "n"}},
+    keys = { { "<leader>tb", mode = "n" } },
     config = function()
         require("dap-python").setup("python")
+        require("nvim-dap-virtual-text").setup()
 
         local dap = require('dap')
         vim.keymap.set("n", "<leader>tb", "<cmd>DapToggleBreakpoint<CR>", {})
@@ -14,9 +16,9 @@ return {
             vim.keymap.set("n", "j", require("dap").step_over, {})
             vim.keymap.set("n", "l", require("dap").step_into, {})
             vim.keymap.set("n", "h", require("dap").step_out, {})
-            vim.keymap.set("n", "k", require("dap").restart_frame, {})
+            vim.keymap.set("n", "k", require("dap").step_back, {})
             vim.keymap.set("n", "c", require("dap").continue, {})
-            vim.keymap.set("n", "p", "<cmd>lua require('dap').repl.close()<CR><cmd>TmuxNavigateUp<CR><cmd>TmuxNavigateUp<CR><cmd>TmuxNavigateUp<CR><cmd>TmuxNavigateUp<CR><cmd>lua require('dap').repl.open()<CR><cmd>TmuxNavigateDown<CR>i", {})
+            vim.keymap.set("n", "p", "<cmd>lua require('dap').repl.open()<CR>", {})
             vim.keymap.set("n", "r", require("dap").restart, {})
             vim.keymap.set("n", "t", "<cmd>lua require('dap').terminate()<CR><cmd>TmuxNavigateDown<CR><cmd>q<CR>", {})
             vim.keymap.set("n", "o", "<cmd>below new<CR><cmd>2bn<CR><cmd>TmuxNavigateUp<CR>", {})
