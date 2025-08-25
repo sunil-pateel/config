@@ -3,8 +3,6 @@ return {
     event = { "BufReadPost", "BufNewFile" },
 
     version = '1.*',
-    build = 'cargo build --release',
-
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {

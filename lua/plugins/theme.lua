@@ -1,6 +1,5 @@
 return {
     'navarasu/onedark.nvim',
-    lazy= false,
     config = function()
         require('onedark').setup  {
             -- Main options --
@@ -31,9 +30,12 @@ return {
             },
 
             -- Custom Highlights --
-            colors = {}, -- Override default colors
+            colors = {
+                dark_grey = '#37383d'
+            }, -- Override default colors
             highlights = {
-                -- AlphaShortcut = {fg = c.blue, bg = c.blue}
+                MiniTablineCurrent = {fg = 'fg', bg = '$dark_grey'},
+                MiniTablineFill = {bg = 'bg'}
             }, -- Override highlight groups
 
             -- Plugins Config --
