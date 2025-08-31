@@ -1,6 +1,6 @@
 return {
     'numToStr/Comment.nvim',
-    keys = {{"<leader>c", mode = "n"},{"<leader>c", mode = "v"}, {"<leader>b", mode = "n"}, {"<leader>b", mode = "v"}},
+    keys = { { "<leader>c", mode = "n" }, { "<leader>c", mode = "v" }, { "<leader>b", mode = "n" }, { "<leader>b", mode = "v" } },
     config = function()
         require('Comment').setup({
             toggler = {

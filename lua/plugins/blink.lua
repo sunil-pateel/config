@@ -36,7 +36,7 @@ return {
         --
         -- See the fuzzy documentation for more information
         fuzzy = {
-            implementation = "lua",
+            implementation = "rust",
         },
         signature = {
             enabled = true,
