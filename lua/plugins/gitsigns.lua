@@ -1,7 +1,10 @@
-return {
-    'lewis6991/gitsigns.nvim',
-    event = "BufEnter",
-    opts = {
-        sign_priority=100
-    },
-}
+local add = require("mini.deps").add
+
+add({
+    source = 'lewis6991/gitsigns.nvim',
+})
+
+local Gitsigns = require("gitsigns")
+Gitsigns.setup({
+    sign_priority = 100
+})

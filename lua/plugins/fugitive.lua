@@ -1,8 +1,7 @@
-return {
-    "tpope/vim-fugitive",
-    event = "VeryLazy",
+local add = require("mini.deps").add
 
-    config = function()
-        vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-    end
-}
+add({
+    source = 'tpope/vim-fugitive',
+})
+
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)

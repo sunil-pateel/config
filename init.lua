@@ -1,4 +1,4 @@
 require("config")
-require("core.lazy_init")
+require("core.mini_deps")
 require("core.lsp")
-
+require("plugins")

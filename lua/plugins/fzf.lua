@@ -1,21 +1,19 @@
-return {
-    "ibhagwan/fzf-lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    keys = {{"<leader>pf"}, {"<leader>ps"}, {"<leader>pds"}, {"<leader>pr"}, {"<leader>pdd"}, {"<leader>gc"}, {"<leader>gb"}},
-    opts = {
-    },
-    config = function()
-        require('fzf-lua').setup {
-            fzf_opts = { ['--cycle'] = true }
-        }
-        local fzf = require('fzf-lua')
+local add = require("mini.deps").add
 
-        vim.keymap.set('n', '<leader>pf', fzf.files, {})
-        vim.keymap.set('n', '<leader>ps', fzf.live_grep, {})
-        vim.keymap.set('n', '<leader>pr', fzf.lsp_references, {})
-        vim.keymap.set('n', '<leader>pds', fzf.lsp_document_symbols, {})
-        vim.keymap.set('n', '<leader>pdd', fzf.diagnostics_document, {})
-        vim.keymap.set('n', '<leader>gc', fzf.git_commits, {})
-        vim.keymap.set('n', '<leader>gb', fzf.git_branches, {})
-    end
+add({
+    source = 'ibhagwan/fzf-lua',
+    depends = { 'nvim-tree/nvim-web-devicons' }
+})
+
+local Fzf = require('fzf-lua')
+Fzf.setup {
+    fzf_opts = { ['--cycle'] = true }
 }
+
+vim.keymap.set('n', '<leader>pf', Fzf.files, {})
+vim.keymap.set('n', '<leader>ps', Fzf.live_grep, {})
+vim.keymap.set('n', '<leader>pr', Fzf.lsp_references, {})
+vim.keymap.set('n', '<leader>pds', Fzf.lsp_document_symbols, {})
+vim.keymap.set('n', '<leader>pdd', Fzf.diagnostics_document, {})
+vim.keymap.set('n', '<leader>gc', Fzf.git_commits, {})
+vim.keymap.set('n', '<leader>gb', Fzf.git_branches, {})
