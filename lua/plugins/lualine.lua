@@ -1,13 +1,16 @@
-local add = require("mini.deps").add
+local MiniDeps = require("mini.deps")
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
-add({
-    source = 'https://github.com/nvim-lualine/lualine.nvim',
-})
+now(function()
+    add({
+        source = 'nvim-lualine/lualine.nvim',
+    })
 
-local Lualine = require("lualine")
-Lualine.setup({
-    options = {
-        theme = 'onedark'
-        -- ... your lualine config
-    },
-})
+    local Lualine = require("lualine")
+    Lualine.setup({
+        options = {
+            theme = 'onedark',
+            disabled_filetypes = { 'dashboard' }
+        },
+    })
+end)

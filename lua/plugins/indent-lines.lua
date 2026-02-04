@@ -1,13 +1,16 @@
-local add = require("mini.deps").add
+local MiniDeps = require("mini.deps")
+local add, now = MiniDeps.add, MiniDeps.now
 
-add({
-    source = 'lukas-reineke/indent-blankline.nvim',
-})
+now(function()
+    add({
+        source = 'lukas-reineke/indent-blankline.nvim',
+    })
 
-local Ibl = require("ibl")
-Ibl.setup({
-    exclude = {
-        filetypes = { "dashboard" }
-    },
-    scope = { enabled = false },
-})
+    local Ibl = require("ibl")
+    Ibl.setup({
+        exclude = {
+            filetypes = { "dashboard" }
+        },
+        scope = { enabled = false },
+    })
+end)

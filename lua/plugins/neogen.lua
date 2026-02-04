@@ -1,8 +1,11 @@
-local add = require("mini.deps").add
+local MiniDeps = require("mini.deps")
+local add, later = MiniDeps.add, MiniDeps.later
 
-add({
-    source = 'danymat/neogen',
-})
+later(function()
+    add({
+        source = 'danymat/neogen',
+    })
 
-local Neogen = require('neogen')
-Neogen.setup({})
+    local Neogen = require('neogen')
+    Neogen.setup({})
+end)

@@ -1,8 +1,10 @@
-local add = require("mini.deps").add
-local build = ":TSUpdate"
+local MiniDeps = require("mini.deps")
+local add, later = MiniDeps.add, MiniDeps.later
 
-add({
-    source = 'mbbill/undotree',
-})
+later(function()
+    add({
+        source = 'mbbill/undotree',
+    })
 
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+    vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+end)

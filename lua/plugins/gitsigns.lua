@@ -1,10 +1,11 @@
-local add = require("mini.deps").add
+local MiniDeps = require("mini.deps")
+local add, now = MiniDeps.add, MiniDeps.now
 
-add({
-    source = 'lewis6991/gitsigns.nvim',
-})
+now(function()
+    add({
+        source = 'lewis6991/gitsigns.nvim',
+    })
 
-local Gitsigns = require("gitsigns")
-Gitsigns.setup({
-    sign_priority = 100
-})
+    local Gitsigns = require("gitsigns")
+    Gitsigns.setup({})
+end)

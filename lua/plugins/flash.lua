@@ -1,22 +1,24 @@
-local keys = {
-    { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
-    { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
-    { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
-    { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
-}
+local MiniDeps = require("mini.deps")
+local add, later = MiniDeps.add, MiniDeps.later
 
-local add = require("mini.deps").add
+later(function()
+    add({
+        source = 'folke/flash.nvim',
+    })
 
-add({
-    source = 'folke/flash.nvim',
-})
-
-local Flash = require("flash")
-Flash.setup({
-    modes = {
-        char = {
-            enabled = false
+    local Flash = require("flash")
+    Flash.setup({
+        modes = {
+            char = {
+                enabled = false
+            }
         }
-    }
-})
+    })
+
+    vim.keymap.set({"n", "x", "o"}, "s", "<cmd>lua require('flash').jump()<cr>")
+    vim.keymap.set({"n", "x", "o"}, "S", "<cmd>lua require('flash').tree()<cr>")
+    vim.keymap.set("o", "r", "<cmd>lua require('flash').remote()<cr>")
+    vim.keymap.set({"o", "x"}, "R", "<cmd>lua require('flash').treesitter_search()<cr>")
+    vim.keymap.set({"c"}, "<c-s>", "<cmd>lua require('flash').toggle()<cr>")
+
+end)
