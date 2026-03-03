@@ -1,16 +1,16 @@
-local data_dir = vim.fn.stdpath("data")
-local jls_dir = vim.fs.joinpath(data_dir, "mason", "packages", "java-language-server")
-
 local MiniDeps = require("mini.deps")
-local add, later = MiniDeps.add, MiniDeps.later
+local add, later, now = MiniDeps.add, MiniDeps.later, MiniDeps.now
 
 later(function()
     add({
-        source = 'idelice/nvim-jls',
+        source = 'nvim-java/nvim-java',
+        depends = { 'https://github.com/MunifTanjim/nui.nvim','https://github.com/mfussenegger/nvim-dap', 'JavaHello/spring-boot.nvim'},
     })
 
-    local Jls = require("jls")
-    Jls.setup({
-        jls_dir = jls_dir
+    require('java').setup({
+        jdk = {
+            auto_install = false,
+            version = '25'
+        }
     })
 end)

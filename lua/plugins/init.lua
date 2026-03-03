@@ -5,6 +5,7 @@ require("plugins.devicons")
 require("plugins.lualine")
 require("plugins.lsp-config") -- Must be before blink
 
+require("plugins.vimtex")
 require("plugins.nvim-tree")
 require("plugins.tmux")
 require("plugins.treesitter")

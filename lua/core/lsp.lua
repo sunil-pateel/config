@@ -4,5 +4,6 @@ vim.lsp.enable({
     "html",
     "cssls",
     "gopls",
-    "java-language-server"
+    "jdtls",
+    "texlab"
 })

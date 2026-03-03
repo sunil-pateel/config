@@ -4,6 +4,10 @@ vim.g.mapleader = " "
 --Classic
 vim.keymap.set("i", "jj", "<Esc>")
 
+--Simple Autopairs
+vim.keymap.set("i", "{<CR>", "{<CR>}<Esc>ko")
+vim.keymap.set("i", "(<CR>", "(<CR>)<Esc>ko")
+
 --Adding Empty Lines
 vim.keymap.set("n", "<Enter>", "o<Esc>")
 vim.keymap.set("n", "<S-Enter>", "O<Esc>")

@@ -1,7 +1,7 @@
 local MiniDeps = require("mini.deps")
-local add, now = MiniDeps.add, MiniDeps.now
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
-now(function()
+later(function()
     add({
         source = 'ibhagwan/fzf-lua',
         depends = { 'nvim-tree/nvim-web-devicons' }

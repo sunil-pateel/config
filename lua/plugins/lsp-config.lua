@@ -1,7 +1,6 @@
 local MiniDeps = require("mini.deps")
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
-local cmd = { "LspInfo", "LspInstall", "LspUninstall" }
 now(function()
     add({
         source = 'neovim/nvim-lspconfig',
