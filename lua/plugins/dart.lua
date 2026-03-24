@@ -30,7 +30,9 @@ now(function ()
         },
         mappings = {
             mark = "<leader>a",
-            jump = "<leader>j"
+            jump = "<leader>j",
+            pick = "",
+            unmark_all = ""
         }
     })
 
